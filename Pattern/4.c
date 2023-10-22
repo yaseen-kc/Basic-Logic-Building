@@ -3,13 +3,22 @@
 
 int main(void)
 {
-    int n = 5*2-1 ;
-    for (int i = n; i < n; i++)
+    int i, j;
+    int n = 5;
+
+    for (i = 1; i <= n; i++)
     {
-        for ( j = 0; i < count; i++)
+        for (j = 1; j <= 9; j++)
         {
-            /* code */
+            if (j >= n + 1 - i && j <= n - 1 + i)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
         }
-        
+        printf("\n");
     }
 }
