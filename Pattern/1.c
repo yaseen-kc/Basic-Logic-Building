@@ -3,15 +3,22 @@
 
 int main(void)
 {
-    int n = 4;
-    for (int row = 1; row <= n; row++)
+    int i, j;
+    int n = 5;
+
+    for (i = 1; i <= n; i++)
     {
-        for (int colum = 1; colum <= row; colum++)
+        for (j = 1; j <= n; j++)
         {
-            printf("* ");
+            if (j <= i)
+            {
+                printf("* ");
+            }
+            else
+            {
+                printf(" ");
+            }
         }
         printf("\n");
     }
-
-
 }
