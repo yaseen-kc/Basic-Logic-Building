@@ -12,11 +12,11 @@ int main(void)
         {
             if (j >= n + 1 - i && j <= n - 1 + i)
             {
-                printf("*");
+                printf("* ");
             }
             else
             {
-                printf(" ");
+                printf("  ");
             }
         }
         printf("\n");
