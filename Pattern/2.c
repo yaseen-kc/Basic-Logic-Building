@@ -10,13 +10,13 @@ int main(void)
     {
         for (j = 1; j <= n; j++)
         {
-            if (j <= n-i)
+            if (j >= n + 1 - i)
             {
-                printf("  ");
+                printf("*");
             }
             else
             {
-                printf("* ");
+                printf(" ");
             }
         }
         printf("\n");

@@ -3,12 +3,21 @@
 
 int main(void)
 {
+    int i, j;
     int n = 5;
-    for (int i = 1; i <= n; i++)
+
+    for (i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= i; j++)
+        for (j = 1; j <= n; j++)
         {
-            printf("%d ", i);
+            if (j >= i)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
         }
         printf("\n");
     }
