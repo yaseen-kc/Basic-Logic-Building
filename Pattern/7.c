@@ -3,16 +3,17 @@
 
 int main(void)
 {
-    int n = 5;
-    int c = 9;
-    int i, j;
-    for (i = 1; i <= n; i++)
+    int i, j, k;
+
+    for (i = 1; i <= 4; i++)
     {
-        for (j = 1; j <= c; j++)
+        k = 1;
+        for (j = 1; j <= 7; i++)
         {
-            if (j <= n + 1 - i || j >= n - 1 + i)
+            if (j >= 5 - i && j <= 3 + i)
             {
-                printf("* ");
+                printf("%d ", k);
+                k++;
             }
             else
             {
