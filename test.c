@@ -1,63 +1,35 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int arr1[100], arr2[100], arr3[200];
-    int s1, s2, s3;
-    int i, j, k;
+    int n;
+    printf("Enter the number of values: ");
+    scanf("%d", &n);
 
-    printf("Limit:");
-    scanf("%d", &s1);
+    int arr[n];
 
-    printf("Elements in the array1 :\n");
-    for (i = 0; i < s1; i++)
+    // Read values into the array
+    printf("Enter %d values:\n", n);
+    for (int i = 0; i < n; i++)
     {
-        printf("%d", i);
-        scanf("%d", &arr1[i]);
+        scanf("%d", &arr[i]);
     }
 
-    printf("Elements in the array :");
-    scanf("%d", &s2);
+    // Display the array after skipping two values next to multiples of 5
+    printf("Array after skipping two values next to multiples of 5:\n");
 
-    printf("Input %d elements in the array :\n", s2);
-    for (i = 0; i < s2; i++)
+    for (int i = 0; i < n; i++)
     {
-        printf("element - %d : ", i);
-        scanf("%d", &arr2[i]);
-    }
-
-    /* size of merged array is size of first array and  size of second array */
-    s3 = s1 + s2;
-    /*----------------- insert in the third array------------------------------------*/
-    for (i = 0; i < s1; i++)
-    {
-        arr3[i] = arr1[i];
-    }
-    for (j = 0; j < s2; j++)
-    {
-        arr3[i] = arr2[j];
-        i++;
-    }
-    /*----------------- sort the array in decending order ---------------------------*/
-    for (i = 0; i < s3; i++)
-    {
-        for (k = 0; k < s3 - 1; k++)
+        if (arr[i] % 5 == 0)
         {
-
-            if (arr3[k] <= arr3[k + 1])
-            {
-                j = arr3[k + 1];
-                arr3[k + 1] = arr3[k];
-                arr3[k] = j;
-            }
+            printf("%d ", arr[i]); // Print the multiple of 5
+            i += 2;                // Skip the next two values
+        }
+        else
+        {
+            printf("%d ", arr[i]);
         }
     }
 
-    /*--------------- Prints the merged array ------------------------------------*/
-    printf("\nThe merged array in decending order is :\n");
-    for (i = 0; i < s3; i++)
-    {
-        printf("%d   ", arr3[i]);
-    }
-    printf("\n\n");
+    return 0;
 }
