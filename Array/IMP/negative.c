@@ -21,7 +21,7 @@ int main(void)
     {
         for (j = i + 1; j < limit; j++)
         {
-            if (array[i] < array[j])
+            if (array[i] > array[j])
             {
                 temp = array[i];
                 array[i] = array[j];
@@ -29,6 +29,13 @@ int main(void)
             }
         }
     }
-    temp = array[1];
-    printf("Largest Element:%d\n", temp);
+
+    printf("Negative Elements:\n");
+    for (i = 0; i < limit; i++)
+    {
+        if (array[i] < 0)
+        {
+            printf("%d ", array[i]);
+        }
+    }
 }
