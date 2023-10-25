@@ -18,7 +18,6 @@ int main(void)
         {
             k--;
         }
-
         for (j = 1; j <= c; j++)
         {
             if (j >= 5 - k && j <= 3 + k)
