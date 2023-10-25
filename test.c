@@ -1,20 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
+int main(void)
 {
-    int n;
-
-    printf("Enter the number of rows: ");
-    scanf("%d", &n);
-
-    for (int i = 0; i < n; i++)
+    int i, j, n = 5, c = 9;
+    for (i = 1; i <= n; i++)
     {
-        for (int j = 0; j <= i; j++)
+        for (j = 1; j <= c; j++)
         {
-            printf("%d ", i * j);
+            if (j >= 6 - i && j <= 4 + i)
+            {
+                printf("* ");
+            }
+            else
+            {
+                printf("  ");
+            }
         }
         printf("\n");
     }
-
-    return 0;
 }
