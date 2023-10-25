@@ -3,9 +3,8 @@
 
 int main(void)
 {
-    int n = 5;
-    int c = 9;
-    int i, j;
+    int i, j, c = 9, n = 5;
+
     for (i = 1; i <= n; i++)
     {
         for (j = 1; j <= c; j++)
