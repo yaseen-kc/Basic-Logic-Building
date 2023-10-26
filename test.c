@@ -6,7 +6,7 @@ int main(void)
     int i, j;
     int k = 0;
     int n = 7;
-    int c = 7;
+    int c = 4;
 
     for (i = 1; i <= n; i++)
     {
@@ -18,9 +18,10 @@ int main(void)
         {
             k--;
         }
+
         for (j = 1; j <= c; j++)
         {
-            if (j >= 5 - k && j <= 3 + k)
+            if (j <= k)
             {
                 printf("* ");
             }
