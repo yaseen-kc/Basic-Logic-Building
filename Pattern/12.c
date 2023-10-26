@@ -8,11 +8,13 @@ int main(void)
 
     for (i = 1; i <= n; i++)
     {
+        k = 0;
         for (j = 1; j <= n; j++)
         {
             if (j <= i)
             {
                 printf("%d ", k);
+                k = k + i - 1;
             }
             else
             {
