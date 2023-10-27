@@ -3,35 +3,29 @@
 
 int main(void)
 {
-    int i, j;
+    int i;
     int limit;
-    int array[100];
     int position;
-    int value;
+    int array[100];
 
-    printf("Enter the array limit:\n");
+    printf("Enter the limit\n");
     scanf("%d", &limit);
 
-    printf("Enter the elements:\n");
+    printf("Enter the elements\n");
     for (i = 0; i < limit; i++)
     {
         scanf("%d", &array[i]);
     }
 
-    printf("Enter the position:\n");
+    printf("Enter position to delete\n");
     scanf("%d", &position);
 
-    printf("Enter the value:\n");
-    scanf("%d", &value);
-
-    for (i = limit - 1; i >= position - 1; i--)
+    for (i = position - 1; i <= limit - 1; i++)
     {
-        array[i + 1] = array[i];
+        array[i] = array[i + 1];
     }
 
-    array[position - 1] = value;
-
-    for (i = 0; i <= limit; i++)
+    for (i = 0; i < limit-1; i++)
     {
         printf("%d ", array[i]);
     }
