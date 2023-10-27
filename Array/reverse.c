@@ -3,28 +3,21 @@
 
 int main(void)
 {
-    int arraySize;
-    int value[arraySize];
+
+    int limit;
     int i;
-    printf("No of elements to store:\n");
-    scanf("%d", &arraySize);
+    int array[100];
+    printf("Enter the limit");
+    scanf("%d", &limit);
 
-    printf("Values to store:\n");
-    for (i = 0; i < arraySize; i++)
+    printf("Enter the elements");
+    for (i = 0; i < limit; i++)
     {
-        scanf("%d", &value[i]);
+        scanf("%d", &array[i]);
     }
 
-    printf("The Values Stored in array are:\n");
-    for (i = 0; i < arraySize; i++)
+    for (i = limit - 1; i >= 0; i--)
     {
-        printf("%d ", value[i]);
-    }
-    
-
-    printf("\nThe values store into the array in reverse are:\n");
-    for (i = arraySize - 1; i >= 0; i--)
-    {
-        printf("%d ", value[i]);
+        printf("%d ", array[i]);
     }
 }
