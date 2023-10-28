@@ -3,50 +3,45 @@
 
 int main(void)
 {
-    int limit;
-    int array[100];
     int i, j;
-    int temp;
+    int limit, half;
+    int array[100];
+    int count = 0;
+    int flag;
 
-    int firstlarge;
-    int secondlarge;
-
-    printf("Limit:\n");
+    printf("Enter the size:\n");
     scanf("%d", &limit);
 
-    printf("Enter Elements:\n");
+    printf("Enter the values:\n");
     for (i = 0; i < limit; i++)
     {
         scanf("%d", &array[i]);
     }
 
-    if (limit % 2 == 0)
+    for (i = 0; i < limit; i++)
     {
-        printf("Error");
-    }
-    else
-    {
-        firstlarge = array[0];
-        secondlarge = array[1];
+        if (array[i] != 1)
+        {
+            flag = 0;
+            half = array[i] / 2;
 
-        if (secondlarge > firstlarge)
-        {
-            temp = secondlarge;
-            secondlarge = firstlarge;
-            firstlarge = temp;
+            for (j = 2; j <= half; j++)
+            {
+                if (array[i] % j == 0)
+                {
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if (flag == 0)
+            {
+                count++;
+            }
         }
     }
-    for (i = 2; i < limit; i++)
-    {
-        if (array[i] > firstlarge)
-        {
-            secondlarge = firstlarge;
-            firstlarge = array[i];
-        }
-        else if (array[i] > secondlarge && array[i] != firstlarge)
-        {
-            secondlarge = array[i];
-        }
-    }
-    printf("Second Largest:%d\n", secondlarge);
+
+    printf("Number of prime numbers in the array: %d\n", count);
+
+    return 0;
 }
