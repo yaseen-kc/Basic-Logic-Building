@@ -1,32 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(void)
-{
-    int i, j, k;
-    int n = 4, c = 7;
-    for (i = 1; i <= n; i++)
-    {
-        k = 1;
-        for (j = 1; j <= c; j++)
-        {
-            if (j >= 5 - i && j <= 3 + i)
-            {
-                printf("%d ", k);
-                if (k < 4)
-                {
-                    k++;
-                }
-                else
-                {
-                    k--;
-                }
-            }
-            else
-            {
-                printf("  ");
+int main() {
+    int array[] = {4, 2, 4, 5, 2, 3, 6, 7, 4, 3};
+    int size = sizeof(array) / sizeof(array[0]);
+
+    printf("Repeated elements and their counts:\n");
+
+    for (int i = 0; i < size; i++) {
+        int count = 1;  // Initialize count to 1 for the current element.
+
+        if (array[i] == -1) {
+            continue;  // Element already counted, move to the next.
+        }
+
+        for (int j = i + 1; j < size; j++) {
+            if (array[i] == array[j]) {
+                count++;
+                array[j] = -1;  // Mark the element as counted.
             }
         }
-        printf("\n");
+
+        if (count > 1) {
+            printf("%d (count: %d)\n", array[i], count);
+        }
     }
+
+    return 0;
 }
