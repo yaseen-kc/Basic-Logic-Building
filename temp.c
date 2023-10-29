@@ -1,26 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
-// 342
-int main(void)
+
+int main()
 {
+    int row;
 
-    int i, j;
-    int n = 7;
-    for (i = 1; i <= n; i++)
+    printf("Rows: ");
+    scanf("%d", &row);
+
+    for (int i = 1; i <= row; i++)
     {
-        for (j = 1; j <= n; j++)
+        for (int j = 1; j <= i; j++)
         {
-            // i == 0 || j == 0 || i == n - 1 || i == j || j == n - 1 || i + j == n - 1
-
-            if (i == 1 || j == 1 || i == n || j == n || j == i || j == 8 - i)
-            {
-                printf("* ");
-            }
-            else
-            {
-                printf("  ");
-            }
+            printf("X ");
         }
         printf("\n");
     }
+
+    return 0;
 }
