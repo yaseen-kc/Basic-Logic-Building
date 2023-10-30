@@ -1,26 +1,17 @@
 public class test {
+
+    static void printmessage(String name) {
+        System.out.println(name);
+    }
+
+    static void findsum(int a, int b) {
+        System.out.println(a + b);
+    }
+
     public static void main(String ar[]) {
-        Hello h = new Hello();
+        printmessage("John");
+        printmessage("Ajith");
 
-        h.add(7, 8);
-
-        h.add(7, 8, 9);
-
-        h.add(7.8, 9.10);
-    }
-
-}
-
-class Hello {
-    void add(int i, int j) {
-        System.out.println(i + j);
-    }
-
-    void add(int i, int j, int k) {
-        System.out.println(i + j + k);
-    }
-
-    void add(double i, double j) {
-        System.out.println(i + j);
+        findsum(10, 20);
     }
 }
