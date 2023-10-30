@@ -1,17 +1,10 @@
 public class test {
 
-    static void printmessage(String name) {
-        System.out.println(name);
+    static int findSquare(int a) {
+        return a * a;
     }
 
-    static void findsum(int a, int b) {
-        System.out.println(a + b);
-    }
-
-    public static void main(String ar[]) {
-        printmessage("John");
-        printmessage("Ajith");
-
-        findsum(10, 20);
+    public static void main(String[] ar) {
+        System.out.println(findSquare(8));
     }
 }
