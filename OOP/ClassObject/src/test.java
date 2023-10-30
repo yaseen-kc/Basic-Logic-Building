@@ -14,12 +14,15 @@ class Student {
     }
 }
 
-public class test {
-    public static void main(String args[]) {
-        Student s1 = new Student(111, "Karan");
-        Student s2 = new Student(222, "Aryan");
+class test extends Student {
+    test(int r, String n) {
+        super(r, n);
+        // TODO Auto-generated constructor stub
+    }
 
-        s1.display();
-        s2.display();
+    int a;
+
+    void hai() {
+        System.out.println("Hai");
     }
 }
