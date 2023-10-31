@@ -3,23 +3,38 @@
 
 int main(void)
 {
+    int a[5];
     int i, j;
-    int n = 6;
-    int c = 12;
+    int n = 5;
+    int flag;
 
-    for (i = 1; i <= n; i++)
+    printf("Write the elements:\n");
+    for (i = 0; i < n; i++)
     {
-        for (j = 1; j <= c; j++)
+        scanf("%d", &a[i]);
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        if (a[i] == 1)
         {
-            if (j >= i && j <= 6 + i)
+            continue;
+        }
+
+        flag = 0;
+        for (j = 2; j < a[i]; j++)
+        {
+            if (a[i] % j == 0)
             {
-                printf("* ");
-            }
-            else
-            {
-                printf("  ");
+                flag = 1;
+                break;
             }
         }
-        printf("\n");
+        if (flag == 0)
+        {
+            printf("%d ", a[i]);
+        }
     }
+
+    return 0;
 }
