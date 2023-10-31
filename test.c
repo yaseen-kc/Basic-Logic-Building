@@ -1,17 +1,24 @@
 #include <stdio.h>
 
-int main()
-{
-    int k = 5;
-    int pattern[] = {5, 5, 5, 5, 5};
-    int n = sizeof(pattern) / sizeof(pattern[0]);
+int main() {
+    int n = 5; // The number of rows
 
-    for (int i = 1; i < n; i++)
-    {
-        for (int j = 0; j < pattern[i]; j++)
-        {
-            printf("%d ", (i * j) % 2);
+    for (int i = 1; i <= n; i++) {
+        // Print leading spaces
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
         }
+
+        // Print asterisks and spaces
+        for (int j = 1; j <= 2 * i - 1; j++) {
+            if (j == 1 || j == 2 * i - 1) {
+                printf("* ");
+            } else {
+                printf("  ");
+            }
+        }
+
+        // Move to the next line
         printf("\n");
     }
 
