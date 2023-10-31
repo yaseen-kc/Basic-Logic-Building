@@ -2,7 +2,7 @@
 
 int main()
 {
-    int pattern[] = {2, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 6};
+    int pattern[] = {2, 1, 1, 1, 4, 4, 1, 1, 1, 6, 6, 6};
     int n = sizeof(pattern) / sizeof(pattern[0]);
 
     for (int i = 0; i < n; i++)

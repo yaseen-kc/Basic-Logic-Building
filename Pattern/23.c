@@ -3,16 +3,18 @@
 
 int main(void)
 {
-    int i, j;
-    int n = 4;
-    int k = 50;
+    int i, j, k;
+    int n = 9;
+
     for (i = 1; i <= n; i++)
     {
+        k = 1;
         for (j = 1; j <= n; j++)
         {
-            if (j == i || j == 1 || j == n)
+            if (j >= 6 - i && j <= 4 + i)
             {
-                printf("* ");
+                printf("%d ", k);
+                k++;
             }
             else
             {
