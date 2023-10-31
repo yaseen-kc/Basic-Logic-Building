@@ -1,19 +1,36 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
+int main(void)
 {
-    int n = 5; // The number of rows
+    int i, j, k;
+    setbuf(stdout, NULL);
 
-    for (int i = 1; i <= n; i++)
+    for (i = 1; i <= 5; i++)
     {
-        int current = i;
-        for (int j = 1; j <= n - i + 1; j++)
+        for (j = 5; j > i; j--)
         {
-            printf("%d", current);
-            current += 2;
+            printf("  ");
+        }
+        for (k = 1; k < 2 * i; k++)
+        {
+            printf("%d ", k);
         }
         printf("\n");
     }
 
-    return 0;
+    for (i = 1; i < 5; i++)
+    {
+        for (j = 1; j <= i; j++)
+        {
+            printf("  ");
+        }
+        for (k = 1; k < 2 * (5 - i); k++)
+        {
+            printf("%d ", k);
+        }
+        printf("\n");
+    }
+
+    return EXIT_SUCCESS;
 }
