@@ -14,10 +14,11 @@ int main(void)
         for (j = 1; j <= i * 3; j++)
         {
             printf("* ");
-            for (j = 1; j <= i * 3; j++)
-            {
-                printf("* ");
-            }
+        }
+        printf("\n");
+        for (j = 1; j <= i * 3; j++)
+        {
+            printf("* ");
         }
         printf("\n");
         if (i == limit)
