@@ -4,23 +4,27 @@
 int main(void)
 {
     int limit;
-    int temp;
-    int array[100];
     int i, j;
-    int k = 1;
+    int array[100];
+    int temp; 
+    int flag;
+    int k = 0;
 
+    //Limit 
     printf("Limit:\n");
     scanf("%d", &limit);
 
+    //Entering Values
     printf("Enter Numbers:\n");
     for (i = 0; i < limit; i++)
     {
         scanf("%d", &array[i]);
     }
 
+    //Sorting Array
     for (i = 0; i < limit; i++)
     {
-        for (j = 0; j < i; j++)
+        for (j = i + 1; j < limit; j++)
         {
             if (array[i] > array[j])
             {
@@ -31,18 +35,40 @@ int main(void)
         }
     }
 
+    //Printing Sorted Array
     printf("Sorted Array:\n");
     for (i = 0; i < limit; i++)
     {
         printf("%d ", array[i]);
     }
 
-    for (j = 2; j < array[i]; j++)
+    //Printing Prime Numbers
+    printf("\nPrime Numbers:\n");
+    for (i = 0; i < limit; i++)
     {
-        if (array[i] % j == 0)
+        //if Array value is 1
+        if (array[i] == 1)
+        {
+            continue;
+        }
+
+        flag = 0;
+        for (j = 2; j <= array[i] / 2; j++)
+        {
+            if (array[i] % j == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
         {
             k++;
-            break;
+            printf("%d ", array[i]);
         }
     }
+
+    printf("\nNumber of Prime Numbers:\n%d", k);
+
+    return 0;
 }

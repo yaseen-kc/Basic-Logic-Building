@@ -3,28 +3,33 @@
 
 int main(void)
 {
-    int a[5];
+    int array[100];
     int i, j;
+    int limit;
     int n = 5;
     int flag;
 
-    printf("Write the elements:\n");
-    for (i = 0; i < n; i++)
+    printf("Enter the limit:\n");
+    scanf("%d", &limit);
+    printf("Enter  the elements:\n");
+    for (i = 0; i < limit; i++)
     {
-        scanf("%d", &a[i]);
+        scanf("%d", &array[i]);
     }
+
+    
 
     for (i = 0; i < n; i++)
     {
-        if (a[i] == 1)
+        if (array[i] == 1)
         {
             continue;
         }
 
         flag = 0;
-        for (j = 2; j < a[i]; j++)
+        for (j = 2; j < array[i]; j++)
         {
-            if (a[i] % j == 0)
+            if (array[i] % j == 0)
             {
                 flag = 1;
                 break;
@@ -32,7 +37,7 @@ int main(void)
         }
         if (flag == 0)
         {
-            printf("%d ", a[i]);
+            printf("%d ", array[i]);
         }
     }
 
