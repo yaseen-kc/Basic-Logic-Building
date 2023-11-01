@@ -3,22 +3,21 @@
 
 int main(void)
 {
-    int limit;
     int i, j;
-    int flag;
+    int limit;
+    int array[100];
     int count;
-    printf("Enter the limit:\n");
+
+    printf("Limit:\n");
     scanf("%d", &limit);
 
-    int arr[limit];
-
-    printf("Enter the values:\n");
+    printf("Elements:\n");
     for (i = 0; i < limit; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &array[i]);
     }
 
-    printf("Unique Elements:\n");
+    printf("Unique Elements\n");
 
     for (i = 0; i < limit; i++)
     {
@@ -27,7 +26,7 @@ int main(void)
         {
             if (i != j)
             {
-                if (arr[i] == arr[j])
+                if (array[i] == array[j])
                 {
                     count++;
                 }
@@ -35,7 +34,7 @@ int main(void)
         }
         if (count == 0)
         {
-            printf("%d ", arr[i]);
+            printf("%d ", array[i]);
         }
     }
 }

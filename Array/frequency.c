@@ -3,12 +3,13 @@
 
 int main(void)
 {
+
     int limit;
     int i, j;
     int array[100];
     int count;
 
-    printf("Limit: ");
+    printf("Limit:\n");
     scanf("%d", &limit);
 
     printf("Elements:\n");
@@ -16,25 +17,25 @@ int main(void)
     {
         scanf("%d", &array[i]);
     }
-
     for (i = 0; i < limit; i++)
     {
         if (array[i] == 0)
         {
-            continue; // Skip elements that have been counted
+            continue;
         }
 
         count = 1;
-        for (j = i + 1; j < limit; j++)
+        for (j = 0; j < limit; j++)
         {
-            if (array[i] == array[j])
+            if (i != j)
             {
-                count++;
-                array[j] = 0; // Mark the element as counted
+                if (array[i] == array[j])
+                {
+                    count++;
+                    array[j] = 0;
+                }
             }
         }
-        printf("Frequency of %d = %d\n", array[i], count);
+        printf("Frequency:%d = %d\n", array[i], count);
     }
-
-    return 0;
 }

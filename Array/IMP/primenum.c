@@ -3,22 +3,21 @@
 
 int main(void)
 {
-    int array[100];
     int i, j;
     int limit;
+    int array[100];
     int flag;
 
     printf("Enter the limit:\n");
-    scanf("%d", &limit);
-    printf("Enter  the elements:\n");
+    scanf("%d", limit);
+
+    printf("Enter the value:\n");
     for (i = 0; i < limit; i++)
     {
-        scanf("%d", &array[i]);
+        scanf("%d", &array);
     }
 
-    
-
-    for (i = 0; i < n; i++)
+    for (i = 0; i < limit; i++)
     {
         if (array[i] == 1)
         {
@@ -26,7 +25,7 @@ int main(void)
         }
 
         flag = 0;
-        for (j = 2; j < array[i]; j++)
+        for (j = 2; j <= array[i] / 2; j++)
         {
             if (array[i] % j == 0)
             {
@@ -34,11 +33,5 @@ int main(void)
                 break;
             }
         }
-        if (flag == 0)
-        {
-            printf("%d ", array[i]);
-        }
     }
-
-    return 0;
 }
