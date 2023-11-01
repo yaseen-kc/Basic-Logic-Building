@@ -3,37 +3,33 @@
 
 int main(void)
 {
-    int limit;
-    int i, j;
-    int array[100];
-    int count;
+    int n = 9;
+    int k = 0;
 
-    printf("Limit: ");
-    scanf("%d", &limit);
-
-    printf("Elements:\n");
-    for (i = 0; i < limit; i++)
+    for (int i = 1; i <= n; i++)
     {
-        scanf("%d", &array[i]);
-    }
 
-    for (i = 0; i < limit; i++)
-    {
-        if (array[i] == 0)
+        for (int j = 1; j <= n; j++)
         {
-            continue; // Skip elements that have been counted
-        }
-
-        count = 1;
-        for (j = i + 1; j < limit; j++)
-        {
-            if (array[i] == array[j])
+            if (j == i || j == n + 1 - i)
             {
-                count++;
-                array[j] = 0; // Mark the element as counted
+                printf("%d", k);
+                if (k <= 5)
+                {
+                    k + 1;
+                }
+                else
+                {
+                    k - 1;
+                }
+            }
+            else
+            {
+                printf(" ");
             }
         }
-        printf("Frequency of %d = %d\n", array[i], count);
+
+        printf("\n");
     }
 
     return 0;
