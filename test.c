@@ -1,32 +1,72 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(void)
 {
-
-    int limit = 5;
     int i, j;
-    int array[10] = {1, 2, 3, 4, 5};
-    int flag;
+    int limit;
+    int sum = 0;
+
+    printf("Enter the Limit:\n");
+    scanf("%d", &limit);
+
+    int array[limit];
+
+    printf("Enter the values:\n");
+    for (i = 0; i < limit; i++)
+    {
+        scanf("%d", &array[i]);
+    }
 
     for (i = 0; i < limit; i++)
     {
-        if (array[i] == 1)
+        sum = sum + array[i];
+    }
+
+    printf("Sum:%d\n", sum);
+
+    if (sum > 100)
+    {
+        printf("Even Numbers Deleted:\n");
+        int newSize = 0; // Track the size of the modified array
+
+        for (i = 0; i < limit; i++)
         {
-            continue;
-        }
-        flag = 0;
-        for (j = 2; j < array[i]; j++)
-        {
-            if (array[i] % j == 0)
+            if (array[i] % 2 != 0)
             {
-                flag = 1;
-                break;
+                array[newSize] = array[i];
+                newSize++;
             }
         }
-        if (flag == 0)
+
+        limit = newSize; // Update the array size
+
+        for (i = 0; i < limit; i++)
         {
             printf("%d ", array[i]);
         }
     }
+
+    if (sum < 100)
+    {
+        printf("Odd Numbers Deleted:\n");
+        int newSize = 0; // Track the size of the modified array
+
+        for (i = 0; i < limit; i++)
+        {
+            if (array[i] % 2 == 0)
+            {
+                array[newSize] = array[i];
+                newSize++;
+            }
+        }
+
+        limit = newSize; // Update the array size
+
+        for (i = 0; i < limit; i++)
+        {
+            printf("%d ", array[i]);
+        }
+    }
+
+    return 0;
 }
