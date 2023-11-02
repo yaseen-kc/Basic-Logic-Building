@@ -2,67 +2,43 @@
 
 int main(void)
 {
-    int i, j;
+    int array[100];
     int limit;
-    int sum = 0;
+    int flag;
 
-    printf("Enter the Limit:\n");
+    printf("Enter the limit:\n");
     scanf("%d", &limit);
 
-    int array[limit];
-
-    printf("Enter the values:\n");
-    for (i = 0; i < limit; i++)
+    printf("Enter the elements:\n");
+    for (int i = 0; i < limit; i++)
     {
         scanf("%d", &array[i]);
-    }
 
-    for (i = 0; i < limit; i++)
-    {
-        sum = sum + array[i];
-    }
-
-    printf("Sum:%d\n", sum);
-
-    if (sum > 100)
-    {
-        printf("Even Numbers Deleted:\n");
-        int newSize = 0; // Track the size of the modified array
-
-        for (i = 0; i < limit; i++)
+        if (array[i] <= 1)
         {
-            if (array[i] % 2 != 0)
+            continue;
+        }
+
+        flag = 1;
+        for (int j = 2; j <= array[i]; j++)
+        {
+            if (array[i] % j == 0)
             {
-                array[newSize] = array[i];
-                newSize++;
+                flag = 0;
+                break;
             }
         }
 
-        limit = newSize; // Update the array size
-
-        for (i = 0; i < limit; i++)
+        if (flag)
         {
-            printf("%d ", array[i]);
+            array[i] = 0;
         }
     }
 
-    if (sum < 100)
+    printf("Array after removing prime numbers:\n");
+    for (int i = 0; i < limit; i++)
     {
-        printf("Odd Numbers Deleted:\n");
-        int newSize = 0; // Track the size of the modified array
-
-        for (i = 0; i < limit; i++)
-        {
-            if (array[i] % 2 == 0)
-            {
-                array[newSize] = array[i];
-                newSize++;
-            }
-        }
-
-        limit = newSize; // Update the array size
-
-        for (i = 0; i < limit; i++)
+        if (array[i] != 0)
         {
             printf("%d ", array[i]);
         }
