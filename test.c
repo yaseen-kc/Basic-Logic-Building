@@ -3,34 +3,30 @@
 
 int main(void)
 {
-    int n = 9;
-    int k = 0;
 
-    for (int i = 1; i <= n; i++)
+    int limit = 5;
+    int i, j;
+    int array[10] = {1, 2, 3, 4, 5};
+    int flag;
+
+    for (i = 0; i < limit; i++)
     {
-
-        for (int j = 1; j <= n; j++)
+        if (array[i] == 1)
         {
-            if (j == i || j == n + 1 - i)
+            continue;
+        }
+        flag = 0;
+        for (j = 2; j < array[i]; j++)
+        {
+            if (array[i] % j == 0)
             {
-                printf("%d", k);
-                if (k <= 5)
-                {
-                    k + 1;
-                }
-                else
-                {
-                    k - 1;
-                }
-            }
-            else
-            {
-                printf(" ");
+                flag = 1;
+                break;
             }
         }
-
-        printf("\n");
+        if (flag == 0)
+        {
+            printf("%d ", array[i]);
+        }
     }
-
-    return 0;
 }

@@ -7,15 +7,30 @@ int main(void)
     int i, j, k;
     printf("Rows");
     scanf("%d", &row);
-    for (i = 1; i < row; i++)
+    for (i = 1; i < 5; i++)
     {
-        for (j = 1; j <= 3 * i; j++)
+        for (j = 1; j <= 1; j++)
         {
-            printf("* ");
+            if (i % 2 == 1)
+            {
+                printf("* * * * *");
+                printf("\n");
+            }
+            else
+            {
+                printf("* * *");
+                printf("\n");
+            }
         }
-        printf("\n");
-        for (k = 1; k <= 2; k++)
+        if (i == 5)
         {
+            break;
+        }
+
+        for (k = 1; k <= 2; k++)
+
+        {
+
             printf("*\n");
         }
     }
