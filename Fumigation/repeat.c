@@ -11,15 +11,15 @@ int main(void)
     scanf("%d", &limit);
 
     printf("Elements:\n");
-    for (i = 0; i < limit; i++)
+    for (i = 1; i <= limit; i++)
     {
         scanf("%d", &array[i]);
     }
 
-    for (i = 0; i < limit - 1; i++)
+    for (i = 1; i <= limit; i++)
     {
         k = 1;
-        
+
         for (j = i + 1; j < limit; j++)
         {
             if (array[i] == 0)
